@@ -1,0 +1,2 @@
+python2 evaluate_ate.py groundtruth.txt result/CameraTrajectory1.txt  --plot fr3_walking_xyz.png
+
