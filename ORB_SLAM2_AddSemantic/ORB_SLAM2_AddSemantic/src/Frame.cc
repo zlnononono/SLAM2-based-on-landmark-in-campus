@@ -1159,7 +1159,11 @@ void Frame::ComputeStereoFromRGBD(const cv::Mat &imDepth)	//参数是深度图�
         const float &u = kp.pt.x;
 		//从深度图像中获取这个特征点对应的深度点
         //NOTE 从这里看对深度图像进行去畸变处理是没有必要的,我们依旧可以直接通过未矫正的特征点的坐标来直接拿到深度数据
+        //剔除位置为-1的特征点
+        if(v<0 || u<0)
+            continue;
         const float d = imDepth.at<float>(v,u);
+
 
 		//
         /** <li> 如果获取到的深度点合法(d>0), 那么就保存这个特征点的深度,并且计算出等效的\在假想的右图中该特征点所匹配的特征点的横坐标 </li>

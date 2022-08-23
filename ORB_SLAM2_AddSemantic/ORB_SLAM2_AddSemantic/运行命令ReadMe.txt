@@ -6,10 +6,11 @@
 终端1:进入到/ORB_SLAM2_AddSemantic/yolov5_RemoveDynamic:
 (python detect_speedup_send.py +path to afterchanged dataset + weights ./weights/yolov5s.pt --conf 0.4 --save-txt --img-size 224)
 一个例子:
-python detect_speedup_send.py --source /home/jy/Desktop/dataset/TUM/tum_fr3_walking_xyz_afterchange/rgb/ --weights ./weights/yolov5s.pt --conf 0.4 --save-txt --img-size 224
+python3 detect_speedup_send.py --source /home/cjj/orb2+yolov5/dataset/tum_fr3_walking_xyz_afterchange/rgb/ --weights ./weights/yolov5s.pt --conf 0.4 --save-txt --img-size 224
 
 
 终端2:进入到/ORB_SLAM2_AddSemantic:
 (./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt Examples/RGB-D/TUM3.yaml + path to dataset + path to associatefile)
 一个例子:
-./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt Examples/RGB-D/TUM3.yaml ~/Desktop/dataset/TUM/rgbd_dataset_freiburg3_walking_xyz ~/Desktop/dataset/TUM/rgbd_dataset_freiburg3_walking_xyz/associate.txt
+./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt Examples/RGB-D/TUM3.yaml /home/cjj/orb2+yolov5/dataset/rgbd_dataset_freiburg3_walking_xyz /home/cjj/orb2+yolov5/dataset/rgbd_dataset_freiburg3_walking_xyz/associate.txt
+ gdb -ex run --args ./Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt Examples/RGB-D/TUM3.yaml /home/cjj/orb2+yolov5/dataset/rgbd_dataset_freiburg3_walking_xyz /home/cjj/orb2+yolov5/dataset/rgbd_dataset_freiburg3_walking_xyz/associate.txt

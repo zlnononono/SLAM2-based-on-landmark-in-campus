@@ -20,7 +20,7 @@ from utils.general import check_img_size, check_requirements, check_imshow, non_
 from utils.plots import plot_one_box
 from utils.torch_utils import select_device, load_classifier, time_synchronized
 
-serverAddr = '/home/jy/server_socket' # 套接字存放路径及名称
+serverAddr = '/home/cjj/server_socket' # 套接字存放路径及名称
 # serverAddr = '/home/jy/tmp/hhh_socket' # 套接字存放路径及名称
 server = socket.socket(socket.AF_UNIX,socket.SOCK_STREAM)
 print(server)
@@ -158,6 +158,7 @@ def detect(save_img=False):
                     result_send = result_send + str_result
 
             data = conn.recv(1024)[0:3].decode("ascii") #
+           
             print('**In python :',data)
             print("*******result is : \n",result_send)
             conn.send(result_send.encode())

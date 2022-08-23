@@ -95,8 +95,9 @@ int main(int argc, char **argv)
 	
 	//配置server_address
 	address.sun_family = AF_UNIX;
-	strcpy(address.sun_path, "/home/jy/server_socket");
+	strcpy(address.sun_path, "/home/cjj/server_socket");
 	len = sizeof(address);
+
  
 	result = connect(sockfd, (struct sockaddr *)&address, len);
  
@@ -384,7 +385,7 @@ void LoadBoundingBoxFromPython(const string& resultFromPython, std::pair<vector<
     }
 
     detect_result.second = class_id;
-    // cout << "LoadBoundingBoxFromPython class id is: " << class_id << endl;
+    cout << "LoadBoundingBoxFromPython class id is: " << class_id << endl;
 
 }
 
@@ -412,9 +413,18 @@ void MakeDetect_result(vector<std::pair<vector<double>, int>>& detect_result , i
 
     char *ptr;//char[]可读可写,可以修改字符串的内容。char*可读不可写，写入就会导致段错误
     ptr = strtok(ch_recv, "*");//字符串分割函数
+    //检查ptr是否全部为string类型
+    
+    
+ 
     while(ptr != NULL){
         printf("ptr=%s\n",ptr);
-
+//         cout << "**ch_recv is : \n" << ch_recv << endl;
+// for (size_t i = 0; i < strlen(ptr); i++)
+//     {
+//         //检查prt[i]是否为乱码
+//             cout << "ptr[" << i << "] is : " << ptr[i] << endl; 
+//     }
         if ( strlen(ptr)>20 ){//试图去除乱码,乱码原因未知...好像并不能去除,留着吧,心理安慰下
             // cout << strlen(ptr) << endl;
             string ptr_str = ptr;
