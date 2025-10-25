@@ -1,0 +1,18 @@
+{
+  "OutputFoldersPerTargetSystem": {
+    "本地计算机": [
+      "out\\build\\x64-Debug",
+      "out\\install\\x64-Debug"
+    ]
+  },
+  "ExpandedNodes": [
+    "",
+    "\\Examples",
+    "\\Examples\\RGB-D",
+    "\\include",
+    "\\out",
+    "\\src"
+  ],
+  "SelectedNode": "\\src\\Tracking.cc",
+  "PreviewInSolutionExplorer": false
+}
